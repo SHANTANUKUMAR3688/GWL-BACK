@@ -27,7 +27,7 @@ app.use(cookieParser())
 
 // cors
 app.use(cors({
-	origin:"http://localhost:3000",
+	origin:["http://localhost:3000","https://gwl-front-1zw3.vercel.app"],
 	methods:["GET","POST","PUT","DELETE","PATCH"],
 	allowedHeaders:["Content-Type","Authorization"],
 	credentials:true,
@@ -44,7 +44,6 @@ app.get("/", (req, res) => {
 // Routes
 app.use(errorMiddleware);
 app.use('/api', userRoutes);
-
 
 // multer 
 const storage = multer.diskStorage({
